@@ -18,7 +18,7 @@ def downloadFile(filename):
     print("Downloading file: " + filename)
     try:
         uri = url + filename
-        urllib.request.urlretrieve(url + filename, cwd + "/files/" + filename)
+        urllib.request.urlretrieve(uri, cwd + "/files/" + filename)
         unzipFile(filename)
     except urllib.error.HTTPError as e:
         print("Http error on " + filename)
