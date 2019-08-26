@@ -4,16 +4,22 @@ from pprint import pprint
 import json
 import re
 import os 
+import zipfile
 
 url = "http://www.nemweb.com.au/Reports/Current/Causer_Pays/"
 dataLinks = []
 cwd = os.getcwd()
+
+def unzipFile(filename):
+    with zipfile.ZipFile(cwd + "/files/" + filename, 'r') as zip_ref:
+        zip_ref.extractall(cwd + "/files/CSV")
 
 def downloadFile(filename):
     print("Downloading file: " + filename)
     try:
         uri = url + filename
         urllib.request.urlretrieve(url + filename, cwd + "/files/" + filename)
+        unzipFile(filename)
     except urllib.error.HTTPError as e:
         print("Http error on " + filename)
 
