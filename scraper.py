@@ -6,7 +6,10 @@ import re
 import os 
 import zipfile
 
-url = "http://www.nemweb.com.au/Reports/Current/Causer_Pays/"
+PARENT_SITE = "http://www.nemweb.com.au/Reports/"
+url = PARENT_SITE + "Current/Causer_Pays/"
+url_MLF = PARENT_SITE + "Current/Marginal_Loss_Factors/" # MLF download link
+
 dataLinks = []
 cwd = os.getcwd()
 
