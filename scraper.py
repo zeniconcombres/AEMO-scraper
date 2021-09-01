@@ -7,7 +7,7 @@ import os
 import zipfile
 
 PARENT_SITE = "http://www.nemweb.com.au/Reports/"
-url = PARENT_SITE + "Current/Causer_Pays/"
+url = PARENT_SITE + "ARCHIVE/Dispatch_Reports/"
 url_MLF = PARENT_SITE + "Current/Marginal_Loss_Factors/" # MLF download link
 
 dataLinks = []
